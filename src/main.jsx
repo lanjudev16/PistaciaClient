@@ -9,6 +9,8 @@ import Login from "./Pages/Login/Login";
 import Registration from "./Pages/Registration/Registration";
 import AuthProvider from "./AuthProvider/AuthProvider";
 import SingleToyDetails from "./Pages/Home/ShopByCategory/SingleToyDetails/SingleToyDetails";
+import PrivateRoute from "./Routes/PrivateRoute";
+import AddAToy from "./Pages/AddAToy/AddAToy";
 
 const router = createBrowserRouter([
   {
@@ -21,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path:"/toy/:id",
-        element:<SingleToyDetails></SingleToyDetails>
+        element:<PrivateRoute><SingleToyDetails></SingleToyDetails></PrivateRoute>
+      },
+      {
+        path:"/addToy",
+        element:<PrivateRoute><AddAToy></AddAToy></PrivateRoute>
       }
     ],
   },

@@ -68,7 +68,7 @@ const Header = () => {
               <div className="flex items-center">
                 {user ? (
                   <div className="flex gap-5">
-                    <Link>Add A Toy</Link> <Link>My Toys</Link>{" "}
+                    <Link to="/addToy">Add A Toy</Link> <Link>My Toys</Link>{" "}
                     <Link>{user.displayName}</Link>
                     <button onClick={handleLogout}><Link>logOut</Link></button>
                   </div>

@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: "toy-marketplace-cfbbd",
   storageBucket: "toy-marketplace-cfbbd.appspot.com",
   messagingSenderId: "607983365109",
-  appId: "1:607983365109:web:b33b5188a5a284c7300ebc"
+  appId: "1:607983365109:web:b33b5188a5a284c7300ebc",
 };
 
 // Initialize Firebase

@@ -1,17 +1,15 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const ShopCatCardItem = ({ item }) => {
   const { user } = useContext(AuthContext);
-  const navigate = useNavigate();
   const { picture, name, price, ratings,id } = item;
   const handleViewDetails = () => {
     if (user) {
-      //    navigate('/login')
     } else {
       alert("Please login ");
-      navigate("/login");
+      return <Navigate to="/login" replace></Navigate>
     }
   };
   return (

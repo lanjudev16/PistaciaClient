@@ -8,7 +8,12 @@
         "name": "Mickey Mouse Plush",
         "picture": "https://i.ibb.co/tYmKWdy/cat1.jpg",
         "price": 19.99,
-        "ratings": 4.5
+        "ratings": 4.5,
+        "sellerName": "Speedy Toys",
+        "email": "speedytoys@example.com",
+        "rating": 4.8,
+        "description": "A set of colorful pull-back racing cars for thrilling races.",
+        "quantity": 15
     },
     {
         "SubCat":{
@@ -19,7 +24,12 @@
         "name": "Frozen 2 Elsa Doll",
         "picture": "https://i.ibb.co/gyKdbKr/cat2.jpg",
         "price": 24.99,
-        "ratings": 4.8
+        "ratings": 4.8,
+        "sellerName": "Speedy Toys",
+        "email": "speedytoys@example.com",
+        "rating": 4.8,
+        "description": "A set of colorful pull-back racing cars for thrilling races.",
+        "quantity": 15
     },
     {
         "SubCat":{
@@ -30,7 +40,12 @@
         "name": "Toy Story Buzz Lightyear Figure",
         "picture": "https://i.ibb.co/7zzr5KJ/Frozendolls1.jpg",
         "price": 29.99,
-        "ratings": 4.7
+        "ratings": 4.7,
+        "sellerName": "Speedy Toys",
+        "email": "speedytoys@example.com",
+        "rating": 4.8,
+        "description": "A set of colorful pull-back racing cars for thrilling races.",
+        "quantity": 15
     },
     {
         "SubCat":{
@@ -41,7 +56,12 @@
         "name": "Cinderella Castle Playset",
         "picture": "https://i.ibb.co/7zzr5KJ/Frozendolls1.jpg",
         "price": 49.99,
-        "ratings": 4.6
+        "ratings": 4.6,
+        "sellerName": "Speedy Toys",
+        "email": "speedytoys@example.com",
+        "rating": 4.8,
+        "description": "A set of colorful pull-back racing cars for thrilling races.",
+        "quantity": 15
     },
     {
         "SubCat":{
@@ -52,7 +72,12 @@
         "name": "Moana Adventure Doll",
         "picture": "https://i.ibb.co/MsqTc9b/Animationcharacters1.jpg",
         "price": 17.99,
-        "ratings": 4.4
+        "ratings": 4.4,
+        "sellerName": "Speedy Toys",
+        "email": "speedytoys@example.com",
+        "rating": 4.8,
+        "description": "A set of colorful pull-back racing cars for thrilling races.",
+        "quantity": 15
     },
     {
         "SubCat":{
@@ -63,6 +88,11 @@
         "name": "Star Wars Lightsaber",
         "picture": "https://i.ibb.co/xC21dpH/Animationcharacters2.jpg",
         "price": 39.99,
-        "ratings": 4.9
+        "ratings": 4.9,
+        "sellerName": "Speedy Toys",
+        "email": "speedytoys@example.com",
+        "rating": 4.8,
+        "description": "A set of colorful pull-back racing cars for thrilling races.",
+        "quantity": 15
     }
 ]
