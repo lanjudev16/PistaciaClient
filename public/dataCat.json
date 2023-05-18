@@ -1,0 +1,68 @@
+[
+    {
+        "SubCat":{
+            "catName":"Disney princes",
+            "catId":1
+        },
+        "id": 1,
+        "name": "Mickey Mouse Plush",
+        "picture": "https://i.ibb.co/tYmKWdy/cat1.jpg",
+        "price": 19.99,
+        "ratings": 4.5
+    },
+    {
+        "SubCat":{
+            "catName":"Disney princes",
+            "catId":1
+        },
+        "id": 2,
+        "name": "Frozen 2 Elsa Doll",
+        "picture": "https://i.ibb.co/gyKdbKr/cat2.jpg",
+        "price": 24.99,
+        "ratings": 4.8
+    },
+    {
+        "SubCat":{
+            "catName":"Frozen dolls",
+            "catId":2
+        },
+        "id": 3,
+        "name": "Toy Story Buzz Lightyear Figure",
+        "picture": "https://i.ibb.co/7zzr5KJ/Frozendolls1.jpg",
+        "price": 29.99,
+        "ratings": 4.7
+    },
+    {
+        "SubCat":{
+            "catName":"Frozen dolls",
+            "catId":2
+        },
+        "id": 4,
+        "name": "Cinderella Castle Playset",
+        "picture": "https://i.ibb.co/7zzr5KJ/Frozendolls1.jpg",
+        "price": 49.99,
+        "ratings": 4.6
+    },
+    {
+        "SubCat":{
+            "catName":"Animation characters",
+            "catId":3
+        },
+        "id": 5,
+        "name": "Moana Adventure Doll",
+        "picture": "https://i.ibb.co/MsqTc9b/Animationcharacters1.jpg",
+        "price": 17.99,
+        "ratings": 4.4
+    },
+    {
+        "SubCat":{
+            "catName":"Animation characters",
+            "catId":3
+        },
+        "id": 6,
+        "name": "Star Wars Lightsaber",
+        "picture": "https://i.ibb.co/xC21dpH/Animationcharacters2.jpg",
+        "price": 39.99,
+        "ratings": 4.9
+    }
+]

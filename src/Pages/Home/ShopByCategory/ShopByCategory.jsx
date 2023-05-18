@@ -1,11 +1,18 @@
-import React from "react";
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
+import React, { useEffect, useState } from "react";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import "react-tabs/style/react-tabs.css";
+import ShopCatCardItem from "./ShopCatCardItem";
 
 const ShopByCategory = () => {
+  const [catDolls, setCatDolls] = useState([]);
+  useEffect(() => {
+    fetch("dataCat.json")
+      .then((res) => res.json())
+      .then((data) => setCatDolls(data));
+  }, []);
   return (
-    <div>
-        <h1 className="text-2xl text-center my-5">Shop by category</h1>
+    <div className="my-5">
+      <h1 className="text-2xl text-center my-5">Shop by category</h1>
       <Tabs>
         <TabList>
           <Tab>Disney princes</Tab>
@@ -14,13 +21,31 @@ const ShopByCategory = () => {
         </TabList>
 
         <TabPanel>
-          <h2>Any content 1</h2>
+          <div className="grid lg:grid-cols-3 gap-4">
+              {catDolls
+                .filter((item) => item.SubCat.catId == 1)
+                .map((item) => (
+                  <ShopCatCardItem key={item.id} item={item}></ShopCatCardItem>
+                ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>Any content 2</h2>
+          <div className="grid lg:grid-cols-3 gap-4">
+              {catDolls
+                .filter((item) => item.SubCat.catId == 2)
+                .map((item) => (
+                  <ShopCatCardItem key={item.id} item={item}></ShopCatCardItem>
+                ))}
+          </div>
         </TabPanel>
         <TabPanel>
-          <h2>Any content 3</h2>
+          <div className="grid lg:grid-cols-3 gap-4">
+              {catDolls
+                .filter((item) => item.SubCat.catId == 3)
+                .map((item) => (
+                  <ShopCatCardItem key={item.id} item={item}></ShopCatCardItem>
+                ))}
+          </div>
         </TabPanel>
       </Tabs>
     </div>

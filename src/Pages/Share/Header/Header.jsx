@@ -1,17 +1,25 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
 
 const Header = () => {
   // Auth context
-  const { user, loading } = useContext(AuthContext);
+  const { user, loading,logOut } = useContext(AuthContext);
+  const navigate=useNavigate()
+  const handleLogout=()=>{
+    logOut().then(result=>{
+      // navigate('/login')
+    }).catch(error=>{
+      console.log(error.message)
+    })
+  }
   if (loading) {
     return <div>loading...</div>;
   } else {
     return (
       <div>
         <div className="navbar bg-base-100">
-          <div className="navbar-start">
+          <div className="navbar-start w-[30%]">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
                 <svg
@@ -50,7 +58,7 @@ const Header = () => {
               <h2>Disney dolls</h2>
             </div>
           </div>
-          <div className="navbar-end hidden lg:flex">
+          <div className="navbar-end w-[70%] hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <div className="flex items-center gap-5 mr-[20px]">
                 <Link>Home</Link>
@@ -62,9 +70,10 @@ const Header = () => {
                   <div className="flex gap-5">
                     <Link>Add A Toy</Link> <Link>My Toys</Link>{" "}
                     <Link>{user.displayName}</Link>
+                    <button onClick={handleLogout}><Link>logOut</Link></button>
                   </div>
                 ) : (
-                  <>Login</>
+                  <><Link to='/login'>Login</Link></>
                 )}
               </div>
             </ul>

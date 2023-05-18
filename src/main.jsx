@@ -8,6 +8,7 @@ import Home from "./Pages/Home/Home/Home";
 import Login from "./Pages/Login/Login";
 import Registration from "./Pages/Registration/Registration";
 import AuthProvider from "./AuthProvider/AuthProvider";
+import SingleToyDetails from "./Pages/Home/ShopByCategory/SingleToyDetails/SingleToyDetails";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
+      {
+        path:"/toy/:id",
+        element:<SingleToyDetails></SingleToyDetails>
+      }
     ],
   },
   {
