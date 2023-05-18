@@ -47,7 +47,7 @@ const Header = () => {
                 src="https://htmldemo.net/kobe/kobe/assets/img/printed-summer-dress-11.jpg"
                 alt=""
               />
-              <h2>Electronics toy</h2>
+              <h2>Disney dolls</h2>
             </div>
           </div>
           <div className="navbar-end hidden lg:flex">

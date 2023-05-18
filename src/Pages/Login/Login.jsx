@@ -8,7 +8,7 @@ const Login = () => {
   //error message state
   const [error, setError] = useState("");
   //auth context
-  const { userSignIn } = useContext(AuthContext);
+  const { userSignIn,googleLogin } = useContext(AuthContext);
   const handleLogin = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -22,6 +22,15 @@ const Login = () => {
         setError(error.message);
       });
   };
+  //handle google sign in
+  const handleGoogleSignIn=()=>{
+    googleLogin()
+    .then(result=>{
+      navigate('/')
+    }).catch(error=>{
+      setError(error.message)
+    })
+  }
   return (
     <div className="hero min-h-screen ">
       <div className="hero-content w-1/2 flex-col lg:flex-col">
@@ -66,8 +75,8 @@ const Login = () => {
               </div>
             </form>
             <div className="divider">OR</div>
-            <div className="grid grid-cols-[1fr,6fr] cursor-pointer items-center  gap-4 border-[#ddd] border-2 px-3 py-2 rounded-full">
-              <img className="w-[50px] h-[50px]" src={googleLogo} alt="" />
+            <div onClick={handleGoogleSignIn} className="grid grid-cols-[1fr,6fr] cursor-pointer items-center  gap-4 border-[#ddd] border-2 px-3 py-2 rounded-full">
+              <img className="w-[40px] h-[40px]" src={googleLogo} alt="" />
               <h1 className="text-center">Sign with google</h1>
             </div>
             <div className="flex gap-3 items-center justify-center">
