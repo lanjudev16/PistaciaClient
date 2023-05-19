@@ -9,7 +9,7 @@ const Header = () => {
   const navigate=useNavigate()
   const handleLogout=()=>{
     logOut().then(result=>{
-      // navigate('/login')
+      navigate('/login')
     }).catch(error=>{
       console.log(error.message)
     })
@@ -65,9 +65,10 @@ const Header = () => {
                 <NavLink to="/">Home</NavLink>
                 <NavLink to='/allToys'>All Toys</NavLink>
                 <NavLink to="/blogs">Blogs</NavLink>
-                {user?<NavLink to="/addToy">Add A Toy</NavLink>:<><NavLink to='/login'>Login</NavLink></>}
-                {user?<NavLink to={`/myToys`}>My Toys</NavLink>:<><NavLink to='/login'>Login</NavLink></>}
-                {user?<>{user.displayName}</>:<><NavLink to='/login'>Login</NavLink></>}
+                {user?<NavLink to="/addToy">Add A Toy</NavLink>:""}
+                {user?<NavLink to={`/myToys`}>My Toys</NavLink>:""}
+                {user?<>{user.displayName}</>:""}
+                {user?<Link onClick={handleLogout}>log Out</Link>:<><NavLink to='/login'>Login</NavLink></>}
               </div>
             </ul>
           </div>

@@ -1,8 +1,14 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const AddAToy = () => {
   const { user } = useContext(AuthContext);
+  const navigate=useNavigate()
+  let SubCategory;
+  const handleSelect=(event)=>{
+    SubCategory= event.target.value
+  }
   const handleAddToy = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -10,7 +16,6 @@ const AddAToy = () => {
     const PictureURL = form.PictureURL.value;
     const sellerName = form.sellerName.value;
     const sellerEmail = form.sellerEmail.value;
-    const SubCategory = form.SubCategory.value;
     const Price = form.Price.value;
     const Rating = form.Rating.value;
     const quantity = form.quantity.value;
@@ -25,17 +30,23 @@ const AddAToy = () => {
       Rating,
       quantity,
       description,
-    }
-    fetch('http://localhost:5000/addToy',{
-        method:"POST",
-        headers:{
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(toyInfo)
-    }).then(res=>res.json()).then(result=>{
-        console.log(result)
+    };
+    fetch("http://localhost:5000/addToy", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(toyInfo),
     })
+      .then((res) => res.json())
+      .then((result) => {
+        if(result.insertedId){
+          alert("Insert successfully")
+          navigate('/myToys')
+        }
+      });
   };
+
   return (
     <div className="card bg-[#FFFFFF] rounded-[20px] ">
       <form onSubmit={handleAddToy}>
@@ -104,18 +115,19 @@ const AddAToy = () => {
             </label>
           </div>
           <div className="form-control shrink">
-            <label className="label">
-              <span className="label-text font-medium text-base text-[#232323]">
-                Sub category
-              </span>
-            </label>
-            <label className="input-group">
-              <input
-                className="input input-bordered w-full"
-                name="SubCategory"
-                placeholder="Sub Category"
-              ></input>
-            </label>
+
+            <div className="">
+              <label className="label">
+                <span className="label-text font-medium text-base text-[#232323]">
+                  Sub category
+                </span>
+              </label>
+              <select onChange={handleSelect}>
+                <option value="Frozen dolls">Frozen dolls</option>
+                <option value="Disney princes">Disney princes</option>
+                <option value="Animation characters">Animation characters</option>
+              </select>
+            </div>
           </div>
           <div className="form-control shrink">
             <label className="label">

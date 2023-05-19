@@ -14,6 +14,7 @@ const MyToys = () => {
       })
     },[user,url])
     const handleDelete=(id)=>{
+      confirm("Are you want to delete")
         fetch(`http://localhost:5000/delete/${id}`,{
             method:"DELETE"
         }).then(res=>res.json()).then(data=>{

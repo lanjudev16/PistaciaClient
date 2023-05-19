@@ -14,26 +14,18 @@ const UpdateMyToys = () => {
   }, [user]);
   //update toy api
 
+  let SubCategory;
+  const handleSelect=(event)=>{
+    SubCategory= event.target.value
+  }
   const handleUpdateToy = (event) => {
     event.preventDefault();
     const form = event.target;
-    const toyName = form.toyName.value;
-    const PictureURL = form.PictureURL.value;
-    const sellerName = form.sellerName.value;
-    const sellerEmail = form.sellerEmail.value;
-    const SubCategory = form.SubCategory.value;
     const Price = form.Price.value;
-    const Rating = form.Rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
     const UpdateToyInfo = {
-      toyName,
-      PictureURL,
-      sellerName,
-      sellerEmail,
-      SubCategory,
       Price,
-      Rating,
       quantity,
       description,
     };
@@ -57,81 +49,7 @@ const UpdateMyToys = () => {
       <div className="card border-[2px] border-red-300 p-5 my-5 shadow">
         <form onSubmit={handleUpdateToy}>
           <div className="grid grid-cols-2 gap-5 flex-shi">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-medium text-base text-[#232323]">
-                  Toy Name
-                </span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  defaultValue={updateToys[0]?.toyName}
-                  className="input input-bordered w-full"
-                  name="toyName"
-                />
-              </label>
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text font-medium text-base text-[#232323]">
-                  Picture URL
-                </span>
-              </label>
-              <label className="input-group">
-                <input
-                  type="text"
-                  defaultValue={updateToys[0]?.PictureURL}
-                  className="input input-bordered w-full"
-                  name="PictureURL"
-                />
-              </label>
-            </div>
-            <div className="form-control shrink">
-              <label className="label">
-                <span className="label-text font-medium text-base text-[#232323]">
-                  Seller name
-                </span>
-              </label>
-              <label className="input-group">
-                <input
-                  className="input input-bordered w-full"
-                  name="sellerName"
-                  id=""
-                  cols="30"
-                  rows="10"
-                  defaultValue={updateToys[0]?.sellerName}
-                ></input>
-              </label>
-            </div>
-            <div className="form-control shrink">
-              <label className="label">
-                <span className="label-text font-medium text-base text-[#232323]">
-                  Seller email
-                </span>
-              </label>
-              <label className="input-group">
-                <input
-                  className="input input-bordered w-full"
-                  name="sellerEmail"
-                  defaultValue={updateToys[0]?.sellerEmail}
-                ></input>
-              </label>
-            </div>
-            <div className="form-control shrink">
-              <label className="label">
-                <span className="label-text font-medium text-base text-[#232323]">
-                  Sub category
-                </span>
-              </label>
-              <label className="input-group">
-                <input
-                  className="input input-bordered w-full"
-                  name="SubCategory"
-                  defaultValue={updateToys[0]?.SubCategory}
-                ></input>
-              </label>
-            </div>
+               
             <div className="form-control shrink">
               <label className="label">
                 <span className="label-text font-medium text-base text-[#232323]">
@@ -143,20 +61,6 @@ const UpdateMyToys = () => {
                   className="input input-bordered w-full"
                   name="Price"
                   defaultValue={updateToys[0]?.Price}
-                ></input>
-              </label>
-            </div>
-            <div className="form-control shrink">
-              <label className="label">
-                <span className="label-text font-medium text-base text-[#232323]">
-                  Rating
-                </span>
-              </label>
-              <label className="input-group">
-                <input
-                  className="input input-bordered w-full"
-                  name="Rating"
-                  defaultValue={updateToys[0]?.Rating}
                 ></input>
               </label>
             </div>

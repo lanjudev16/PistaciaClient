@@ -6,7 +6,7 @@ import ShopCatCardItem from "./ShopCatCardItem";
 const ShopByCategory = () => {
   const [catDolls, setCatDolls] = useState([]);
   useEffect(() => {
-    fetch("dataCat.json")
+    fetch("http://localhost:5000/allToyData")
       .then((res) => res.json())
       .then((data) => setCatDolls(data));
   }, []);
@@ -22,28 +22,28 @@ const ShopByCategory = () => {
 
         <TabPanel>
           <div className="grid lg:grid-cols-3 gap-4">
-              {catDolls
-                .filter((item) => item.SubCat.catId == 1)
+               { catDolls
+                .filter((item) => item.SubCategory == 'Disney princes')
                 .map((item) => (
-                  <ShopCatCardItem key={item.id} item={item}></ShopCatCardItem>
+                  <ShopCatCardItem key={item._id} item={item}></ShopCatCardItem>
                 ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="grid lg:grid-cols-3 gap-4">
               {catDolls
-                .filter((item) => item.SubCat.catId == 2)
+                .filter((item) => item.SubCategory == 'Frozen dolls')
                 .map((item) => (
-                  <ShopCatCardItem key={item.id} item={item}></ShopCatCardItem>
+                  <ShopCatCardItem key={item._id} item={item}></ShopCatCardItem>
                 ))}
           </div>
         </TabPanel>
         <TabPanel>
           <div className="grid lg:grid-cols-3 gap-4">
               {catDolls
-                .filter((item) => item.SubCat.catId == 3)
+                .filter((item) => item.SubCategory == 'Animation characters')
                 .map((item) => (
-                  <ShopCatCardItem key={item.id} item={item}></ShopCatCardItem>
+                  <ShopCatCardItem key={item._id} item={item}></ShopCatCardItem>
                 ))}
           </div>
         </TabPanel>
