@@ -9,7 +9,7 @@ const Banner = () => {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}
-      className="h-[50vh] flex items-center"
+      className="h-[80vh] flex items-center"
     >
       <div>
         <h1 className="ml-5 text-3xl ">Dolls</h1>

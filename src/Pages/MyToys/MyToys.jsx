@@ -4,7 +4,9 @@ import MySingleToys from './MySingleToys';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const MyToys = () => {
-    
+  useEffect(()=>{
+    document.title="My toys | Disney dolls"
+},[])
     const[myToys,setToys]=useState([])
     const {user}=useContext(AuthContext)
     const url=`http://localhost:5000/myToys?email=${user.email}`
@@ -26,7 +28,7 @@ const MyToys = () => {
     }
 
     return (
-        <div className="overflow-x-auto mb-5">
+        <div className="overflow-x-auto mb-5 card border-[2px] border-red-300 p-5 my-5 shadow">
         <table className="table table-compact w-full">
           <thead>
             <tr>

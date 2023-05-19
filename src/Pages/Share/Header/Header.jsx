@@ -6,6 +6,7 @@ import "./Header.css"
 const Header = () => {
   // Auth context
   const { user, loading,logOut } = useContext(AuthContext);
+  console.log(user)
   const navigate=useNavigate()
   const handleLogout=()=>{
     logOut().then(result=>{
@@ -67,9 +68,11 @@ const Header = () => {
                 <NavLink to="/blogs">Blogs</NavLink>
                 {user?<NavLink to="/addToy">Add A Toy</NavLink>:""}
                 {user?<NavLink to={`/myToys`}>My Toys</NavLink>:""}
-                {user?<>{user.displayName}</>:""}
                 {user?<Link onClick={handleLogout}>log Out</Link>:<><NavLink to='/login'>Login</NavLink></>}
               </div>
+              {
+                user && user && <abbr title={user.displayName}><img className="w-[50px] h-[50px] rounded-full" src={user.photoURL} alt="" /></abbr>
+              }
             </ul>
           </div>
         </div>

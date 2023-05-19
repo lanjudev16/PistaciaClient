@@ -1,8 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 
 const AddAToy = () => {
+  useEffect(()=>{
+    document.title="Add a Toy | Disney dolls"
+},[])
   const { user } = useContext(AuthContext);
   const navigate=useNavigate()
   let SubCategory;
@@ -48,7 +51,7 @@ const AddAToy = () => {
   };
 
   return (
-    <div className="card bg-[#FFFFFF] rounded-[20px] ">
+    <div className="card bg-[#FFFFFF] rounded-[20px] card border-[2px] border-red-300 p-5 my-5 shadow ">
       <form onSubmit={handleAddToy}>
         <div className="grid grid-cols-2 gap-5 flex-shi">
           <div className="form-control">

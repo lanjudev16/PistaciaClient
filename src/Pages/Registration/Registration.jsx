@@ -1,8 +1,12 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import googleLogo from "../../assets/images/logo/googleLogin.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Registration = () => {
+  const navigate=useNavigate()
+  useEffect(()=>{
+    document.title="Registration | Disney dolls"
+},[])
     //error message state
     const [error,setError]=useState("")
     //auth context
@@ -22,6 +26,7 @@ const Registration = () => {
             result.user.photoURL = photo;
             userUpdate( name,photo)
             .then(result=>{
+              navigate('/login')
             }).catch(error=>{
                 setError(error.message)
             });

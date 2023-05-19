@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import AlltoysSingleItem from "./AlltoysSingleItem";
 
 const AllToys = () => {
+  useEffect(()=>{
+    document.title="All toys | Disney dolls"
+},[])
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -36,17 +39,17 @@ const AllToys = () => {
           value="Search"
         />
       </form>
-      <div className="overflow-x-auto mb-5">
+      <div className="overflow-x-auto mb-5 card border-[2px] border-red-300 p-5 my-5 shadow">
         <table className="table table-compact w-full">
           <thead>
             <tr>
-              <th></th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>company</th>
-              <th>location</th>
-              <th>Last Login</th>
-              <th>Favorite Color</th>
+              <th>No.</th>
+              <th>Toy Name</th>
+              <th>Seller Name</th>
+              <th>Price</th>
+              <th>Sub Category</th>
+              <th>Rating</th>
+              <th>Details</th>
             </tr>
           </thead>
           {data &&

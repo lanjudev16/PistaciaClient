@@ -4,6 +4,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import googleLogo from "../../assets/images/logo/googleLogin.png";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 const Login = () => {
+  useEffect(()=>{
+    document.title="Login | Disney dolls"
+},[])
   const navigate = useNavigate();
   //error message state
   const [error, setError] = useState("");
