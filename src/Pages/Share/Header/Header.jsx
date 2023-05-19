@@ -65,7 +65,7 @@ const Header = () => {
               <div className="flex items-center gap-5 mr-[20px]">
                 <NavLink to="/">Home</NavLink>
                 <NavLink to='/allToys'>All Toys</NavLink>
-                <NavLink to="/blogs">Blogs</NavLink>
+                <NavLink to="/blog">Blog</NavLink>
                 {user?<NavLink to="/addToy">Add A Toy</NavLink>:""}
                 {user?<NavLink to={`/myToys`}>My Toys</NavLink>:""}
                 {user?<Link onClick={handleLogout}>log Out</Link>:<><NavLink to='/login'>Login</NavLink></>}
