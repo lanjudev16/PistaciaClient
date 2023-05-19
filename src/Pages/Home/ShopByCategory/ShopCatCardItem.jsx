@@ -26,7 +26,7 @@ const ShopCatCardItem = ({ item }) => {
       </div>
       <Link to={`/toy/${id}`}>
         <button
-          className="w-[90%] btn btn-danger mx-auto my-5"
+          className="w-[100%] btn btn-danger mx-auto my-5"
           onClick={handleViewDetails}
         >
           View Details

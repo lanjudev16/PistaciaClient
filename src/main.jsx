@@ -11,6 +11,9 @@ import AuthProvider from "./AuthProvider/AuthProvider";
 import SingleToyDetails from "./Pages/Home/ShopByCategory/SingleToyDetails/SingleToyDetails";
 import PrivateRoute from "./Routes/PrivateRoute";
 import AddAToy from "./Pages/AddAToy/AddAToy";
+import AllToys from "./Pages/AllToys/AllToys";
+import MyToys from "./Pages/MyToys/MyToys";
+import UpdateMyToys from "./Pages/MyToys/UpdateMyToys";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +31,16 @@ const router = createBrowserRouter([
       {
         path:"/addToy",
         element:<PrivateRoute><AddAToy></AddAToy></PrivateRoute>
+      },
+      {
+        path:"/allToys",
+        element:<AllToys></AllToys>
+      },{
+        path:"/myToys",
+        element:<PrivateRoute><MyToys></MyToys></PrivateRoute>
+      },{
+        path:"/update/:id",
+        element:<UpdateMyToys></UpdateMyToys>,
       }
     ],
   },

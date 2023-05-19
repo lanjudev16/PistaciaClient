@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../AuthProvider/AuthProvider";
-
+import logo from '../../../assets/images/logo/logo.png'
+import "./Header.css"
 const Header = () => {
   // Auth context
   const { user, loading,logOut } = useContext(AuthContext);
@@ -51,8 +52,8 @@ const Header = () => {
             </div>
             <div className="flex gap-2 items-center">
               <img
-                className="w-[100px] h-[100px] "
-                src="https://htmldemo.net/kobe/kobe/assets/img/printed-summer-dress-11.jpg"
+                className="w-[150px] h-[70px] "
+                src={logo}
                 alt=""
               />
               <h2>Disney dolls</h2>
@@ -61,20 +62,12 @@ const Header = () => {
           <div className="navbar-end w-[70%] hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <div className="flex items-center gap-5 mr-[20px]">
-                <Link>Home</Link>
-                <Link>All Toys</Link>
-                <Link>Blogs</Link>
-              </div>
-              <div className="flex items-center">
-                {user ? (
-                  <div className="flex gap-5">
-                    <Link to="/addToy">Add A Toy</Link> <Link>My Toys</Link>{" "}
-                    <Link>{user.displayName}</Link>
-                    <button onClick={handleLogout}><Link>logOut</Link></button>
-                  </div>
-                ) : (
-                  <><Link to='/login'>Login</Link></>
-                )}
+                <NavLink to="/">Home</NavLink>
+                <NavLink to='/allToys'>All Toys</NavLink>
+                <NavLink to="/blogs">Blogs</NavLink>
+                {user?<NavLink to="/addToy">Add A Toy</NavLink>:<><NavLink to='/login'>Login</NavLink></>}
+                {user?<NavLink to={`/myToys`}>My Toys</NavLink>:<><NavLink to='/login'>Login</NavLink></>}
+                {user?<>{user.displayName}</>:<><NavLink to='/login'>Login</NavLink></>}
               </div>
             </ul>
           </div>
