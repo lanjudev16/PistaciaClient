@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./Blog.css"
 const Blog = () => {
+    useEffect(()=>{
+        document.title="Blog | Disney dolls"
+    },[])
     const [isOpen, setIsOpen] = useState(false);
     return (
         <div className='space-y-2 lg:space-y-4 bg-red-300 p-10'>
