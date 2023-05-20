@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router-dom";
+import { Toaster, toast } from "react-hot-toast";
 
 const AddAToy = () => {
   useEffect(()=>{
@@ -44,7 +45,7 @@ const AddAToy = () => {
       .then((res) => res.json())
       .then((result) => {
         if(result.insertedId){
-          alert("Insert successfully")
+          alert("insert successfully")
           navigate('/myToys')
         }
       });
@@ -125,10 +126,10 @@ const AddAToy = () => {
                   Sub category
                 </span>
               </label>
-              <select onChange={handleSelect}>
-                <option value="Frozen dolls">Frozen dolls</option>
+              <select onClick={handleSelect}>
+                <option  value="Frozen dolls">Frozen dolls</option>
                 <option value="Disney princes">Disney princes</option>
-                <option value="Animation characters">Animation characters</option>
+                <option value="Animation characters" selected>Animation characters</option>
               </select>
             </div>
           </div>
@@ -194,9 +195,10 @@ const AddAToy = () => {
         <div className="text-center">
           <input
             type="submit"
-            value="Submit"
+            value="Add toy"
             className="btn btn-danger px-3 w-[25%]  my-4"
           />
+          <Toaster></Toaster>
         </div>
       </form>
     </div>

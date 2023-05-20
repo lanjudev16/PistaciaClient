@@ -64,12 +64,14 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div className="lg:w-[1140px] mx-auto">
+  <div className="bg-[#FFFAEC]">
+  <div className="lg:w-[1140px] mx-auto ">
     <React.StrictMode>
       <AuthProvider>
         <RouterProvider router={router} />
       </AuthProvider>
     </React.StrictMode>
     ,
+  </div>
   </div>
 );

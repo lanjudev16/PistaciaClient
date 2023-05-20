@@ -27,6 +27,7 @@ const ShopCatCardItem = ({ item }) => {
         <h2 className="card-title">Seller Name: {sellerName}</h2>
         <p>Price: {Price}</p>
         <p>Total Ratings: {Rating}</p>
+        <Link to={`/toy/${_id}`}><button>View Details</button></Link>
       </div>
     </div>
   );

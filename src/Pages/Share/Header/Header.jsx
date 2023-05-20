@@ -20,7 +20,7 @@ const Header = () => {
   } else {
     return (
       <div>
-        <div className="navbar bg-base-100 rounded-lg py-5">
+        <div className="navbar bg-base-100 rounded-lg  py-5">
           <div className="navbar-start lg:w-[30%]">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">

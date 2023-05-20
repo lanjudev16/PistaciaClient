@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import {  useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { Toaster, toast } from "react-hot-toast";
 
 const UpdateMyToys = () => {
   const params = useParams();
+  const navigate=useNavigate()
   const id = params.id;
   const { user, loading } = useContext(AuthContext);
   const [updateToys, setUpdateTOys] = useState([]);
@@ -29,8 +31,7 @@ const UpdateMyToys = () => {
       quantity,
       description,
     };
-    console.log(UpdateToyInfo);
-
+    
     fetch(`http://localhost:5000/updateData/${id}`, {
         method:"PUT",
         headers:{
@@ -38,8 +39,14 @@ const UpdateMyToys = () => {
         },
         body:JSON.stringify(UpdateToyInfo)
     }).then(res=>res.json()).then(data=>{
-        console.log(data)
+      
+        if(data.modifiedCount>0){
+          
+          alert("Update successfully")
+          navigate('/myToys')
+        }
     })
+
   };
 
   if (loading) {
@@ -91,9 +98,10 @@ const UpdateMyToys = () => {
           <div className="text-center">
             <input
               type="submit"
-              value="Submit"
+              value="Update"
               className="btn btn-danger px-3 w-[25%]  my-4"
             />
+            <Toaster></Toaster>
           </div>
         </form>
       </div>

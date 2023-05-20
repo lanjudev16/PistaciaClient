@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const MySingleToys = ({toyInfo,index,handleDelete}) => {
@@ -14,6 +15,7 @@ const MySingleToys = ({toyInfo,index,handleDelete}) => {
             <td>{quantity}</td>
             <td><Link to={`/update/${_id}`}>Update</Link></td>
             <td><button onClick={()=>handleDelete(_id)}>Delete</button></td>
+            <Toaster></Toaster>
           </tr>
         </tbody>
     );
