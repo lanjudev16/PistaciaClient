@@ -4,6 +4,7 @@ import Banner from "../Banner/Banner";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Gallery from "../Gallery/Gallery";
+import ExtraSection from "../ExtraSection/ExtraSection";
 AOS.init();
 const Home = () => {
     useEffect(()=>{
@@ -12,6 +13,7 @@ const Home = () => {
   return (
     <div>
       <Banner></Banner>
+      <ExtraSection></ExtraSection>
       <Gallery></Gallery>
       <ShopByCategory></ShopByCategory>
     </div>

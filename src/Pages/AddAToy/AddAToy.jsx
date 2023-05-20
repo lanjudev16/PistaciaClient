@@ -20,7 +20,7 @@ const AddAToy = () => {
     const PictureURL = form.PictureURL.value;
     const sellerName = form.sellerName.value;
     const sellerEmail = form.sellerEmail.value;
-    const Price = form.Price.value;
+    const Price = parseInt(form.Price.value);
     const Rating = form.Rating.value;
     const quantity = form.quantity.value;
     const description = form.description.value;
@@ -35,7 +35,7 @@ const AddAToy = () => {
       quantity,
       description,
     };
-    fetch("http://localhost:5000/addToy", {
+    fetch("https://server-vert-three.vercel.app/addToy", {
       method: "POST",
       headers: {
         "content-type": "application/json",

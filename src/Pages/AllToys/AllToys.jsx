@@ -2,20 +2,25 @@ import React, { useEffect, useState } from "react";
 import AlltoysSingleItem from "./AlltoysSingleItem";
 
 const AllToys = () => {
+  const[type,setType]=useState('ascending')
+  const handleSort=(event)=>{
+    setType(parseInt(event.target.value))
+  }
+  console.log(typeof type,type)
   useEffect(()=>{
     document.title="All toys | Disney dolls"
 },[])
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allToys")
+    fetch(`https://server-vert-three.vercel.app/allToys/${type}`)
       .then((res) => res.json())
       .then((data) => setData(data));
-  }, []);
+  }, [type]);
   const handleSearch = (event) => {
     event.preventDefault();
     const name = event.target.form.toyName.value;
-    fetch(`http://localhost:5000/searchText/${name}`)
+    fetch(`https://server-vert-three.vercel.app/searchText/${name}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -46,7 +51,14 @@ const AllToys = () => {
               <th>No.</th>
               <th>Toy Name</th>
               <th>Seller Name</th>
-              <th>Price</th>
+              <th>
+                <span>Price</span> sort by
+                <br />
+                <select onChange={handleSort}>
+                  <option selected value="1">Ascending</option>
+                  <option value="-1">Descending</option>
+                </select>
+              </th>
               <th>Sub Category</th>
               <th>Rating</th>
               <th>Details</th>

@@ -6,7 +6,7 @@ const SingleToyDetails = () => {
   const [Toys, setToys] = useState([]);
   const params = useParams();
   useEffect(() => {
-    fetch("http://localhost:5000/allToyData")
+    fetch("https://server-vert-three.vercel.app/allToyData")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);

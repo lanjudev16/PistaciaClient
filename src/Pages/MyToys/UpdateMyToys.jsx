@@ -10,7 +10,7 @@ const UpdateMyToys = () => {
   const { user, loading } = useContext(AuthContext);
   const [updateToys, setUpdateTOys] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/updateData/${id}`)
+    fetch(`https://server-vert-three.vercel.app/updateData/${id}`)
       .then((res) => res.json())
       .then((data) => setUpdateTOys(data));
   }, [user]);
@@ -23,7 +23,7 @@ const UpdateMyToys = () => {
   const handleUpdateToy = (event) => {
     event.preventDefault();
     const form = event.target;
-    const Price = form.Price.value;
+    const Price = parseInt(form.Price.value);
     const quantity = form.quantity.value;
     const description = form.description.value;
     const UpdateToyInfo = {
@@ -32,7 +32,7 @@ const UpdateMyToys = () => {
       description,
     };
     
-    fetch(`http://localhost:5000/updateData/${id}`, {
+    fetch(`https://server-vert-three.vercel.app/updateInfo/${id}`, {
         method:"PUT",
         headers:{
             'content-type':'application/json'

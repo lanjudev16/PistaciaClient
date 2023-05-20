@@ -6,7 +6,7 @@ import './style.css'
 const ShopByCategory = () => {
   const [catDolls, setCatDolls] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allToyData")
+    fetch("https://server-vert-three.vercel.app/allToyData")
       .then((res) => res.json())
       .then((data) => setCatDolls(data));
   }, []);
@@ -19,8 +19,8 @@ const ShopByCategory = () => {
     data-aos-mirror="true"
     data-aos-once="false"
     data-aos-anchor-placement="top-center">
-      <h1 className="text-2xl text-center my-5">Shop by category</h1>
-      <Tabs>
+      <h1 className="text-2xl text-center lg:mt-14  lg:mx-0 my-5">Shop by category</h1>
+      <Tabs className="mb-14">
         <TabList className="text-center">
           <Tab>Disney princes</Tab>
           <Tab>Frozen dolls</Tab>
@@ -28,7 +28,7 @@ const ShopByCategory = () => {
         </TabList>
 
         <TabPanel>
-          <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-5">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-5 mx-5 lg:mx-0">
                { catDolls
                 .filter((item) => item.SubCategory == 'Disney princes')
                 .map((item) => (
@@ -37,7 +37,7 @@ const ShopByCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid lg:grid-cols-2 gap-4 mt-5">
+          <div className="grid lg:grid-cols-2 gap-4 mt-5 mx-5 lg:mx-0">
               {catDolls
                 .filter((item) => item.SubCategory == 'Frozen dolls')
                 .map((item) => (
@@ -46,7 +46,7 @@ const ShopByCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid lg:grid-cols-2 gap-4 mt-5">
+          <div className="grid lg:grid-cols-2 gap-4 mt-5 mx-5 lg:mx-0">
               {catDolls
                 .filter((item) => item.SubCategory == 'Animation characters')
                 .map((item) => (

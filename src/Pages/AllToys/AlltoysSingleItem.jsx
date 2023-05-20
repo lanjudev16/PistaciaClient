@@ -12,7 +12,7 @@ const AlltoysSingleItem = ({toysDetails,index}) => {
             <td>{Price}</td>
             <td>{SubCategory}</td>
             <td>{quantity}</td>
-            <Link to={`/toy/${_id}`}><td>View Details</td></Link>
+            <td><Link to={`/toy/${_id}`}><td>View Details</td></Link></td>
           </tr>
         </tbody>
     );

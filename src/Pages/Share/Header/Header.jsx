@@ -43,12 +43,15 @@ const Header = () => {
                 tabIndex={0}
                 className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
               >
-                <li>
-                  <a>Home</a>
-                </li>
-                <li>
-                  <Link>All Toys</Link>
-                </li>
+                <NavLink to="/">Home</NavLink>
+                <NavLink to='/allToys'>All Toys</NavLink>
+                <NavLink to="/blog">Blog</NavLink>
+                {user?<NavLink to="/addToy">Add A Toy</NavLink>:""}
+                {user?<NavLink to={`/myToys`}>My Toys</NavLink>:""}
+                {user?<Link onClick={handleLogout}>log Out</Link>:<><NavLink to='/login'>Login</NavLink></>}
+                {
+                user && user && <abbr title={user.displayName}><img className="w-[50px] h-[50px] rounded-full" src={user.photoURL} alt="" /></abbr>
+              }
               </ul>
             </div>
             <div className="flex gap-2 items-center">

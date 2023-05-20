@@ -24,7 +24,7 @@ const Footer = () => {
         </div>
       </footer>
       <footer className="footer px-10 py-4 border-t bg-[#ffffff] text-base-content border-base-300">
-        <div className="items-center grid-flow-col">
+        <div className="items-center lg:grid-flow-col">
           <img src={logo} className="w-[150px] h-[75px] mr-5" alt="" />
           <p>
             Disney dolls Ltd. <br />
