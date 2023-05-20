@@ -3,6 +3,8 @@ import "./Login.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import googleLogo from "../../assets/images/logo/googleLogin.png";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Header from "../Share/Header/Header";
+import Footer from "../Share/Footer/Footer";
 const Login = () => {
   useEffect(()=>{
     document.title="Login | Disney dolls"
@@ -45,7 +47,9 @@ const Login = () => {
     }
   }, [navigate, from, user]);
   return (
-    <div className="hero min-h-screen ">
+    <div>
+      <Header></Header>
+          <div className="hero min-h-screen ">
       <div className="hero-content w-1/2 flex-col lg:flex-col">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Login</h1>
@@ -104,6 +108,8 @@ const Login = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };

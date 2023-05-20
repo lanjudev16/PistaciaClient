@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import googleLogo from "../../assets/images/logo/googleLogin.png";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Header from "../Share/Header/Header";
+import Footer from "../Share/Footer/Footer";
 const Registration = () => {
   const navigate=useNavigate()
   useEffect(()=>{
@@ -37,7 +39,9 @@ const Registration = () => {
 
     }
   return (
-    <div className="hero min-h-screen ">
+    <div>
+      <Header></Header>
+          <div className="hero min-h-screen ">
       <div className="hero-content w-1/2 flex-col lg:flex-col">
         <div className="text-center">
           <h1 className="text-3xl font-bold">Registration</h1>
@@ -109,6 +113,8 @@ const Registration = () => {
           </div>
         </div>
       </div>
+    </div>
+    <Footer></Footer>
     </div>
   );
 };
