@@ -51,7 +51,7 @@ const AddAToy = () => {
   };
 
   return (
-    <div className="card bg-[#FFFFFF] rounded-[20px] card border-[2px] border-red-300 p-5 my-5 shadow ">
+    <div className="card bg-[#FFFFFF] rounded-[20px]  border-[2px] border-red-300 p-5 my-5 shadow ">
       <form onSubmit={handleAddToy}>
         <div className="grid grid-cols-2 gap-5 flex-shi">
           <div className="form-control">
@@ -189,7 +189,7 @@ const AddAToy = () => {
           id=""
           cols="30"
           rows="10"
-          className="textarea textarea-primary h-24 w-full"
+          className="textarea input-bordered  h-24 w-full"
         ></textarea>
         <div className="text-center">
           <input

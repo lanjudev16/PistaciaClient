@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { AuthContext } from "../../../../AuthProvider/AuthProvider";
 
 const SingleToyDetails = () => {
@@ -11,28 +11,34 @@ const SingleToyDetails = () => {
       .then((data) => setToys(data));
   }, []);
   const toyInfo = Toys.find((item) => item._id == params.id);
-//   const {picture,name,price,ratings,sellerName,email,description,quantity}=toyInfo
   return (
-    <div>
-      <div className="card w-full bg-base-100 shadow-xl image-full">
-        <figure>
-          <img
-            src={toyInfo?.PictureURL}
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">{toyInfo?.toyName}</h2>
-          <h4>Seller name: {toyInfo?.sellerName}</h4>
-          <h4>Seller Email: {toyInfo?.sellerEmail}</h4>
-          <p>{toyInfo?.description}</p>
-          <div>
-            <h4>Price ${toyInfo?.Price}</h4>
-            <h4>{toyInfo?.Rating}</h4>
-          </div>
-          <h4>{toyInfo?.quantity}</h4>
+    <div className='flex w-full justify-center bg-base-300 p-8 lg:p-16 mb-5' style={{
+      backgroundImage: `url("https://i.ibb.co/1mskBW4/home3bg.png")`,
+    }}>
+            <div className='lg:flex gap-4 w-full rounded bg-white py-16 '>
+                <img className='lg:w-full lg:max-h-[500px] px-6 py-3 rounded' src={toyInfo?.PictureURL} alt="" />
+                <div className='my-auto space-y-1 px-6'>
+                    <h3>{toyInfo?.toyName}</h3>
+                    <p>Price: <span className='text-orange-400'>${toyInfo?.Price}</span></p>
+                    <p>Quantity: {toyInfo?.quantity}</p>
+                    <p>Rating: {toyInfo?.Rating}</p>
+                    <p>
+                        <span className='font-bold'>Description:</span> <br />
+                        <span>{toyInfo?.description}</span>
+                    </p>
+                    <p>Seller: {toyInfo?.sellerName} </p>
+                    <p>Email: {toyInfo?.sellerEmail}</p>
+                    <div className='flex gap-2 lg:pt-5 pt-3'>
+                        <Link to='/allToys' className='mr-5'>
+                            <button className="btn btn-accent w-32">Go Back</button>
+                        </Link>
+                        <Link to='/'>
+                            <button className="btn btn-accent w-32">Go to Home</button>
+                        </Link>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
   );
 };
 

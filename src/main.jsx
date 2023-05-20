@@ -15,6 +15,7 @@ import AllToys from "./Pages/AllToys/AllToys";
 import MyToys from "./Pages/MyToys/MyToys";
 import UpdateMyToys from "./Pages/MyToys/UpdateMyToys";
 import Blog from "./Pages/Blog/Blog";
+import Error from "./Pages/Error/Error";
 
 const router = createBrowserRouter([
   {
@@ -56,10 +57,14 @@ const router = createBrowserRouter([
     path: "/registration",
     element: <Registration></Registration>,
   },
+  {
+    path:"*",
+    element:<Error></Error>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div className="w-[1140px] mx-auto">
+  <div className="lg:w-[1140px] mx-auto">
     <React.StrictMode>
       <AuthProvider>
         <RouterProvider router={router} />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import ShopCatCardItem from "./ShopCatCardItem";
-
+import './style.css'
 const ShopByCategory = () => {
   const [catDolls, setCatDolls] = useState([]);
   useEffect(() => {
@@ -21,14 +21,14 @@ const ShopByCategory = () => {
     data-aos-anchor-placement="top-center">
       <h1 className="text-2xl text-center my-5">Shop by category</h1>
       <Tabs>
-        <TabList>
+        <TabList className="text-center">
           <Tab>Disney princes</Tab>
           <Tab>Frozen dolls</Tab>
           <Tab>Animation characters</Tab>
         </TabList>
 
         <TabPanel>
-          <div className="grid lg:grid-cols-3 gap-4">
+          <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 mt-5">
                { catDolls
                 .filter((item) => item.SubCategory == 'Disney princes')
                 .map((item) => (
@@ -37,7 +37,7 @@ const ShopByCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid lg:grid-cols-3 gap-4">
+          <div className="grid lg:grid-cols-2 gap-4 mt-5">
               {catDolls
                 .filter((item) => item.SubCategory == 'Frozen dolls')
                 .map((item) => (
@@ -46,7 +46,7 @@ const ShopByCategory = () => {
           </div>
         </TabPanel>
         <TabPanel>
-          <div className="grid lg:grid-cols-3 gap-4">
+          <div className="grid lg:grid-cols-2 gap-4 mt-5">
               {catDolls
                 .filter((item) => item.SubCategory == 'Animation characters')
                 .map((item) => (

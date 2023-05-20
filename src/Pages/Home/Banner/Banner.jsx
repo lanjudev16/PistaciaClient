@@ -8,8 +8,10 @@ const Banner = () => {
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        maxWidth:"100%",
+        
       }}
-      className="h-[80vh] flex items-center"
+      className="h-[80vh] flex items-center mt-5 rounded-md mb-5"
     >
       <div>
         <h1 className="ml-5 text-3xl ">Dolls</h1>

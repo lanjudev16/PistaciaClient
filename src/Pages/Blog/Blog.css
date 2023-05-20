@@ -1,4 +1,5 @@
-
-.bg-custom{
-    background-color: rgba(34, 51, 98, 1);
+.background-blog{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

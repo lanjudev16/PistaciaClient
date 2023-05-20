@@ -20,8 +20,8 @@ const Header = () => {
   } else {
     return (
       <div>
-        <div className="navbar bg-base-100">
-          <div className="navbar-start w-[30%]">
+        <div className="navbar bg-base-100 rounded-lg py-5">
+          <div className="navbar-start lg:w-[30%]">
             <div className="dropdown">
               <label tabIndex={0} className="btn btn-ghost lg:hidden">
                 <svg
@@ -60,7 +60,7 @@ const Header = () => {
               <h2>Disney dolls</h2>
             </div>
           </div>
-          <div className="navbar-end w-[70%] hidden lg:flex">
+          <div className="navbar-end lg:w-[70%] hidden lg:flex">
             <ul className="menu menu-horizontal px-1">
               <div className="flex items-center gap-5 mr-[20px]">
                 <NavLink to="/">Home</NavLink>
