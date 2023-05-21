@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { useNavigate } from "react-router-dom";
 import { Toaster, toast } from "react-hot-toast";
@@ -8,10 +8,10 @@ const AddAToy = () => {
     document.title="Add a Toy | Disney dolls"
 },[])
   const { user } = useContext(AuthContext);
+  const [SubCategory,setSubCategory]=useState("Animation characters")
   const navigate=useNavigate()
-  let SubCategory;
   const handleSelect=(event)=>{
-    SubCategory= event.target.value
+   setSubCategory(event.target.value)
   }
   const handleAddToy = (event) => {
     event.preventDefault();
