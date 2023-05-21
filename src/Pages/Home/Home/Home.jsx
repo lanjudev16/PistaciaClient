@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Gallery from "../Gallery/Gallery";
 import ExtraSection from "../ExtraSection/ExtraSection";
+import Exclusive from "../Exclusive/Exclusive";
 AOS.init();
 const Home = () => {
     useEffect(()=>{
@@ -16,6 +17,7 @@ const Home = () => {
       <ExtraSection></ExtraSection>
       <Gallery></Gallery>
       <ShopByCategory></ShopByCategory>
+      <Exclusive></Exclusive>
     </div>
   );
 };

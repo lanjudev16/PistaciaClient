@@ -1,30 +1,30 @@
-import React from 'react';
-import './Exclusive.css'
+import React from "react";
+import image6 from "../../../assets/images/Gallery/2022card-array-with-reflection.webp";
 const Exclusive = () => {
-    return (
-<div className="divider-wrap bg-img" data-bg-img="https://htmldemo.net/kidol/kidol/assets/img/photos/bg1.png" style="background-image: url(&quot;assets/img/photos/bg1.png&quot;);">
-              <div className="row align-items-center">
-                <div className="col-lg-6 position-relative">
-                  <div className="content">
-                    <h2>Subscribe for Exclusive Sales &amp; News</h2>
-                  </div>
-                  <div className="shape-group">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-                <div className="col-lg-6">
-                  <div className="newsletter-form">
-                    <form action="#">
-                      <input className="form-control" type="email" placeholder="Enter Your Email"/>
-                      <button className="btn btn-theme" type="submit">Subscribe</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-    );
+  return (
+    <div className="grid lg:grid-cols-[3fr,5fr] grid-cols-1 lg:my-14 gap-5 border-2 border-[#FCA5A4] rounded-md p-5 lg:p-20 flex-row-reverse overflow-hidde lg:mx-0 mx-5">
+      <div>
+        <h1 className="lg:flex items-center text-center">
+          $<span className="lg:text-7xl  font-extrabold mr-2 lg:mr-5">100</span>
+          <span className="lg:text-3xl lg:mr-5">
+            Statement <br /> credit
+          </span>
+        </h1>
+        <div className="text-center lg:text-left ">
+          <p className="mt-5 lg:text-left">
+          Product restrictions can be really useful in a number of distribution or manufacturing scenarios to ensure you sell the right products to the right customers.
+          </p>
+          <h1 className="my-3">Restriction</h1>
+          <a className=" my-2 bg-[#FCA5A4] text-white px-5 py-2 rounded-md" href="">
+            Learn more
+          </a>
+        </div>
+      </div>
+      <div>
+        <img className="w-[100%]" src={image6} alt="" />
+      </div>
+    </div>
+  );
 };
 
 export default Exclusive;
