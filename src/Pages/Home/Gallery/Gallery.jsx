@@ -20,7 +20,7 @@ import image5 from "../../../assets/images/Gallery/image5.png";
 
 const Gallery = () => {
   return (
-    <>
+    <div  >
     <h2 className="lg:text-5xl text-2xl font-semibold text-center lg:my-14 my-5">Photo Gallery</h2>
       <Swiper
         spaceBetween={30}
@@ -107,7 +107,7 @@ const Gallery = () => {
           />
         </SwiperSlide>
       </Swiper>
-    </>
+    </div>
   );
 };
 

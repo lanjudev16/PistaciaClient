@@ -14,8 +14,8 @@ const ShopCatCardItem = ({ item }) => {
   };
   return (
 
-    <div className="card card-side bg-base-100 shadow-xl">
-      <figure className="w-1/2 rounded-xl">
+    <div className="card card-side  bg-base-100 shadow-xl">
+      <figure className="lg:w-1/2  rounded-xl">
         <img
           src={PictureURL}
           alt="Movie"
@@ -27,7 +27,7 @@ const ShopCatCardItem = ({ item }) => {
         <h2 className="card-title">Seller Name: {sellerName}</h2>
         <p>Price: {Price}</p>
         <p>Total Ratings: {Rating}</p>
-        <Link to={`/toy/${_id}`}><button>View Details</button></Link>
+        <Link to={`/toy/${_id}`}><button className="my-2 bg-[#FCA5A4] text-white px-5 py-2 rounded-md">View Details</button></Link>
       </div>
     </div>
   );

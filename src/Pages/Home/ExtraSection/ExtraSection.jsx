@@ -2,7 +2,7 @@ import React from 'react';
 import './style.css'
 const ExtraSection = () => {
     return (
-        <div className='grid lg:grid-cols-3 grid-cols-1 mt-14 gap-5 mx-5 lg:mx-0'>
+        <div className='grid lg:grid-cols-3 grid-cols-1 mt-14 gap-5 mx-5 lg:mx-0' >
             <div className='featured-item '>
                 <div className='flex justify-center mb-[17px]'>
                     <img src="https://htmldemo.net/kidol/kidol/assets/img/icons/f1.png" alt="" />

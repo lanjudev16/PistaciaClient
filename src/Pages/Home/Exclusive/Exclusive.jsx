@@ -2,7 +2,8 @@ import React from "react";
 import image6 from "../../../assets/images/Gallery/2022card-array-with-reflection.webp";
 const Exclusive = () => {
   return (
-    <div className="grid lg:grid-cols-[3fr,5fr] grid-cols-1 lg:my-14 gap-5 border-2 border-[#FCA5A4] rounded-md p-5 lg:p-20 flex-row-reverse overflow-hidde lg:mx-0 mx-5">
+    <div className="grid lg:grid-cols-[3fr,5fr] grid-cols-1 lg:my-14 gap-5 border-2 border-[#FCA5A4] rounded-md p-5 lg:p-20 flex-row-reverse overflow-hidde lg:mx-0 mx-5"  data-aos="fade-up"
+    data-aos-duration="3000" >
       <div>
         <h1 className="lg:flex items-center text-center">
           $<span className="lg:text-7xl  font-extrabold mr-2 lg:mr-5">100</span>

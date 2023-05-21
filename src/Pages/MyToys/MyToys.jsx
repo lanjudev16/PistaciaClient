@@ -20,7 +20,7 @@ const MyToys = () => {
         fetch(`https://server-vert-three.vercel.app/delete/${id}`,{
             method:"DELETE"
         }).then(res=>res.json()).then(data=>{
-          toast.success("Delete successfully")
+          alert('Are you sure to delete this toy?')
             if(data.deletedCount){
               const toys=myToys.filter(item=>item._id!=id)
               setToys(toys)
