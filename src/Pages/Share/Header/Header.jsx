@@ -16,7 +16,7 @@ const Header = () => {
     })
   }
   if (loading) {
-    return <div>loading...</div>;
+    return <div className="h-[100vh] flex items-center justify-center"><progress className="progress w-56"></progress></div>
   } else {
     return (
       <div>
