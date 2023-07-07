@@ -10,7 +10,7 @@ const UpdateMyToys = () => {
   const { user, loading } = useContext(AuthContext);
   const [updateToys, setUpdateTOys] = useState([]);
   useEffect(() => {
-    fetch(`https://server-vert-three.vercel.app/updateData/${id}`)
+    fetch(`https://project-theta-cyan.vercel.app/updateData/${id}`)
       .then((res) => res.json())
       .then((data) => setUpdateTOys(data));
   }, [user]);
@@ -32,7 +32,7 @@ const UpdateMyToys = () => {
       description,
     };
     
-    fetch(`https://server-vert-three.vercel.app/updateInfo/${id}`, {
+    fetch(`https://project-theta-cyan.vercel.app/updateInfo/${id}`, {
         method:"PUT",
         headers:{
             'content-type':'application/json'

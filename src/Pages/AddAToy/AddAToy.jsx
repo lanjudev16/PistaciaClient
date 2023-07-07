@@ -35,7 +35,7 @@ const AddAToy = () => {
       quantity,
       description,
     };
-    fetch("https://server-vert-three.vercel.app/addToy", {
+    fetch("https://project-theta-cyan.vercel.app/addToy", {
       method: "POST",
       headers: {
         "content-type": "application/json",

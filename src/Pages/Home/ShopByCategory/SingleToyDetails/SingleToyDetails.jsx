@@ -7,7 +7,7 @@ const SingleToyDetails = () => {
   const navigate=useNavigate()
   const params = useParams();
   useEffect(() => {
-    fetch("https://server-vert-three.vercel.app/allToyData")
+    fetch("https://project-theta-cyan.vercel.app/allToyData")
       .then((res) => res.json())
       .then((data) => setToys(data));
   }, []);

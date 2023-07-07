@@ -13,14 +13,14 @@ const AllToys = () => {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch(`https://server-vert-three.vercel.app/allToys/${type}`)
+    fetch(`https://project-theta-cyan.vercel.app/allToys/${type}`)
       .then((res) => res.json())
       .then((data) => setData(data));
   }, [type]);
   const handleSearch = (event) => {
     event.preventDefault();
     const name = event.target.form.toyName.value;
-    fetch(`https://server-vert-three.vercel.app/searchText/${name}`)
+    fetch(`https://project-theta-cyan.vercel.app/searchText/${name}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -9,7 +9,7 @@ const MyToys = () => {
 },[])
     const[myToys,setToys]=useState([])
     const {user}=useContext(AuthContext)
-    const url=`https://server-vert-three.vercel.app/myToys?email=${user.email}`
+    const url=`https://project-theta-cyan.vercel.app/myToys?email=${user.email}`
     useEffect(()=>{
       fetch(url).then(res=>res.json()).then(data=>{
         setToys(data)
@@ -17,7 +17,7 @@ const MyToys = () => {
     },[user,url])
     const handleDelete=(id)=>{
       
-        fetch(`https://server-vert-three.vercel.app/delete/${id}`,{
+        fetch(`https://project-theta-cyan.vercel.app/delete/${id}`,{
             method:"DELETE"
         }).then(res=>res.json()).then(data=>{
           alert('Are you sure to delete this toy?')

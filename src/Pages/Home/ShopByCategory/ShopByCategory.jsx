@@ -6,7 +6,7 @@ import './style.css'
 const ShopByCategory = () => {
   const [catDolls, setCatDolls] = useState([]);
   useEffect(() => {
-    fetch("https://server-vert-three.vercel.app/allToyData")
+    fetch("https://project-theta-cyan.vercel.app/allToyData")
       .then((res) => res.json())
       .then((data) => setCatDolls(data));
   }, []);
